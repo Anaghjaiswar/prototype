@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta-name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NivaaraN App - Home</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+        *{
+        text-decoration: none;
+        color: inherit;
+        
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #e0e0e0;
+    }
+
+    /* Phone frame */
+    .phone {
+      width: 360px;
+      height: 640px;
+      border: 14px solid #333;
+      border-radius: 36px;
+      background: #fff;
+      position: relative;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .phone::before {
+      content: '';
+      display: block;
+      width: 140px;
+      height: 25px;
+      background: #333;
+      border-radius: 0 0 20px 20px;
+      position: absolute;
+      top: -1px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    /* Scrollable content */
+    .screen {
+      flex: 1;
+      overflow-y: auto;
+      padding: 15px;
+      background: #f9f9f9;
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+    .header .logo {
+      font-weight: 600;
+      font-size: 1.2rem;
+      color: #1976D2;
+    }
+    .header .location {
+      font-size: 0.9rem;
+      color: #555;
+    }
+    .header i {
+      font-size: 1.2rem;
+      color: #1976D2;
+      cursor: pointer;
+    }
+
+    /* Stats cards */
+    .stats {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+    .stat-card {
+      flex: 1;
+      background: #fff;
+      padding: 10px;
+      border-radius: 12px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      text-align: center;
+      font-size: 0.8rem;
+    }
+    .stat-card strong {
+      display: block;
+      font-size: 0.9rem;
+      color: #1976D2;
+    }
+
+    /* Quick Actions */
+    .quick-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .action {
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px 10px;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #1976D2;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .action a {
+      color: inherit;
+      text-decoration: none;
+      display: block;
+      margin-top: 8px;
+      font-size: 0.95em;
+    }
+    .action i {
+      font-size: 1.4rem;
+      margin-bottom: 8px;
+    }
+    .action:hover {
+      background: #E3F2FD;
+    }
+
+    /* Recent Issues */
+    .recent-title {
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #333;
+    }
+    .issue-card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 10px;
+      margin-bottom: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: background 0.2s;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+    .issue-card:hover {
+      background: #e3f2fd;
+    }
+    .issue-status {
+      font-size: 0.75rem;
+      color: #43A047;
+      font-weight: 600;
+    }
+
+    /* Tagline */
+    .tagline {
+      text-align: center;
+      font-size: 0.85rem;
+      color: #1976D2;
+      margin: 20px 0;
+      font-weight: 600;
+    }
+
+    /* Bottom Nav */
+    .bottom-nav {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 10px;
+      background: #fff;
+      border-top: 1px solid #ddd;
+    }
+    .bottom-nav a {
+      text-align: center;
+      font-size: 0.75rem;
+      color: #1976D2;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .bottom-nav i {
+      font-size: 1.2rem;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    /* Floating Camera Button */
+    .camera-btn {
+      position: absolute;
+      bottom: 70px;
+      right: 20px;
+      background: #1976D2;
+      color: #fff;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.4rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      cursor: pointer;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+<div class="phone">
+  <div class="screen">
+
+    <!-- Header -->
+    <div class="header">
+      <div class="logo">NivaaraN</div>
+      <div class="location"><i class="fa-solid fa-location-dot"></i> Ghaziabad, UP</div>
+      <a href="notifications.html" title="Notifications"><i class="fa-solid fa-bell"></i></a>
+    </div>
+
+    <!-- Stats -->
+    <div class="stats">
+      <div class="stat-card"><strong>23,675</strong> reports this week</div>
+      <div class="stat-card"><strong>47,632</strong> fixed this month</div>
+      <div class="stat-card"><strong>12M+</strong> updates overall</div>
+    </div>
+
+    <!-- Quick Actions -->
+    <div class="quick-actions">
+      <a href="reportIssue.html" class="action">
+        <i class="fa-solid fa-camera"></i>
+        Report Issue
+      </a>
+      <a href="myReports.html" class="action">
+        <i class="fa-solid fa-folder-open"></i>
+        My Reports
+      </a>
+      <a href="nearbyIssues.html" class="action">
+        <i class="fa-solid fa-map-marker-alt"></i>
+        Nearby Issues
+      </a>
+      <a href="cityUpdates.html" class="action">
+        <i class="fa-solid fa-chart-line"></i>
+        City Updates
+      </a>
+    </div>
+
+    <!-- Recent Issues -->
+    <div class="recent-title">Recent Issues</div>
+    <a href="reportDetail.html" class="issue-card">Pothole reported at NH-24 <div class="issue-status">In Progress</div></a>
+    <a href="reportDetail.html" class="issue-card">Garbage cleared at Indirapuram <div class="issue-status">Resolved ✅</div></a>
+    <a href="reportDetail.html" class="issue-card">Broken streetlight at Raj Nagar <div class="issue-status">Pending Review</div></a>
+
+    <!-- Tagline -->
+    <div class="tagline">Report • Resolve • Rebuild</div>
+
+  </div>
+
+  <!-- Floating Camera Button -->
+  <a href="reportIssue.html" class="camera-btn" title="Report an Issue"><i class="fa-solid fa-camera"></i></a>
+
+  <!-- Bottom Nav -->
+  <div class="bottom-nav">
+    <a href="home.html"><i class="fa-solid fa-house"></i>Home</a>
+    <a href="reportIssue.html"><i class="fa-solid fa-camera"></i>Report</a>
+    <a href="profile.html"><i class="fa-solid fa-user"></i>Profile</a>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Report Submitted - NivaaraN</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+        *{
+        text-decoration: none;
+        color: inherit;
+        
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #e0e0e0;
+    }
+
+    .phone {
+      width: 360px;
+      height: 640px;
+      border: 14px solid #333;
+      border-radius: 36px;
+      background: #fff;
+      position: relative;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .phone::before {
+      content: '';
+      display: block;
+      width: 140px;
+      height: 25px;
+      background: #333;
+      border-radius: 0 0 20px 20px;
+      position: absolute;
+      top: -1px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .icon {
+      font-size: 3rem;
+      color: #4caf50;
+      margin: 40px 0 20px 0;
+    }
+
+    h2 {
+      color: #1976D2;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 25px;
+      background: #1976D2;
+      color: #fff;
+      font-weight: 600;
+      border-radius: 25px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #1565c0;
+    }
+  </style>
+</head>
+<body>
+  <div class="phone">
+    <i class="fa-solid fa-circle-check icon"></i>
+    <h2>Report Submitted!</h2>
+    <p>Thank you for reporting the issue. Our team will review it and take necessary actions. You can track the status in <strong>My Reports</strong>.</p>
+    <a href="home.html" class="btn">Go to Home</a>
+    <a href="myReports.html" class="btn" style="margin-top:10px;">View My Reports</a>
+  </div>
+</body>
+</html>

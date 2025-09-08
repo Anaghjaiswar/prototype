@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NivaaraN App - Report Details</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+        *{
+        text-decoration: none;
+        color: inherit;
+        
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #e0e0e0;
+    }
+    .phone {
+      width: 360px;
+      height: 640px;
+      border: 14px solid #333;
+      border-radius: 36px;
+      background: #fff;
+      position: relative;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .phone::before {
+      content: '';
+      display: block;
+      width: 140px;
+      height: 25px;
+      background: #333;
+      border-radius: 0 0 20px 20px;
+      position: absolute;
+      top: -1px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .screen {
+      flex: 1;
+      overflow-y: auto;
+      padding: 15px;
+      background: #f9f9f9;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+    .header .title {
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: #1976D2;
+    }
+    .header a {
+      color: #1976D2;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+    }
+    .header i {
+      font-size: 1.2rem;
+      color: #1976D2;
+      cursor: pointer;
+    }
+    .report-details {
+      background: #fff;
+      border-radius: 12px;
+      padding: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      margin-bottom: 15px;
+    }
+    .report-title {
+      font-weight: 600;
+      font-size: 1rem;
+      margin-bottom: 6px;
+      color: #333;
+    }
+    .report-desc {
+      font-size: 0.85rem;
+      color: #555;
+      margin-bottom: 6px;
+    }
+    .report-date {
+      font-size: 0.7rem;
+      color: #999;
+      margin-bottom: 6px;
+    }
+    .status {
+      padding: 4px 8px;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      display: inline-block;
+    }
+    .status.pending { background: #ffebee; color: #c62828; }
+    .status.progress { background: #fff8e1; color: #ef6c00; }
+    .status.resolved { background: #e8f5e9; color: #2e7d32; }
+    .photos {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+    .photo-card {
+      flex: 1;
+      border-radius: 10px;
+      overflow: hidden;
+      height: 120px;
+      background-size: cover;
+      background-position: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    }
+    .comments-title {
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #333;
+    }
+    .comment-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 10px;
+      margin-bottom: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      font-size: 0.8rem;
+    }
+    .comment-author {
+      font-weight: 600;
+      color: #1976D2;
+      margin-bottom: 2px;
+    }
+    .comment-text {
+      color: #555;
+    }
+    .comment-date {
+      font-size: 0.7rem;
+      color: #999;
+      margin-top: 4px;
+    }
+    .add-comment {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 15px;
+    }
+    .add-comment input {
+      flex: 1;
+      padding: 8px;
+      border-radius: 20px;
+      border: 1px solid #ccc;
+      font-size: 0.8rem;
+    }
+    .add-comment button {
+      background: #1976D2;
+      color: #fff;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    .bottom-nav {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 10px;
+      background: #fff;
+      border-top: 1px solid #ddd;
+    }
+    .bottom-nav a {
+      text-decoration: none;
+      color: #1976D2;
+      text-align: center;
+      font-size: 0.75rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .bottom-nav i {
+      font-size: 1.2rem;
+      display: block;
+      margin-bottom: 4px;
+    }
+    .report-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .report-info {
+      flex: 1;
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="phone">
+  <div class="screen">
+
+    <!-- Header -->
+    <div class="header">
+      <a href="home.html" title="Back to Home"><i class="fa-solid fa-arrow-left"></i></a>
+      <div class="title">Report Details</div>
+      <a href="notifications.html" title="Notifications"><i class="fa-solid fa-bell"></i></a>
+    </div>
+
+    <!-- Report Details Card -->
+    <div class="report-details">
+      <div class="report-title">Broken Streetlight</div>
+      <div class="report-desc">Near Central Park, Sector 9</div>
+      <div class="report-date">Reported: Sep 6, 2025</div>
+      <div class="status progress">In Progress</div>
+    </div>
+
+    <!-- Photos -->
+    <div class="photos">
+      <div style="flex:1; display:flex; flex-direction:column; align-items:center;">
+        <span style="font-size:0.85rem; color:#555; margin-bottom:4px;">Before</span>
+        <div class="photo-card" style="background-image: url('problemstatement.jpg');"><img src="assets/problemstatement.jpg" alt="" height="100px"></div>
+      </div>
+      <div style="flex:1; display:flex; flex-direction:column; align-items:center;">
+        <span style="font-size:0.85rem; color:#555; margin-bottom:4px;">After</span>
+        <div class="photo-card" style="background-image: url('image.png');"><img src="assets/image.png" alt="" height="100px" width="100px"></div>
+      </div>
+    </div>
+
+    <!-- Comments -->
+    <div class="comments-title">Comments</div>
+    <div class="comment-card">
+      <div class="comment-author">Municipal Worker</div>
+      <div class="comment-text">Repaired the wiring today.</div>
+      <div class="comment-date">Sep 7, 2025</div>
+    </div>
+    <div class="comment-card">
+      <div class="comment-author">Citizen</div>
+      <div class="comment-text">Thanks for fixing it quickly!</div>
+      <div class="comment-date">Sep 7, 2025</div>
+    </div>
+
+    <!-- Add Comment -->
+    <div class="add-comment">
+      <input type="text" id="comment-input" placeholder="Add a comment...">
+      <button id="comment-btn"><i class="fa-solid fa-paper-plane"></i></button>
+    </div>
+
+    <script>
+    document.getElementById('comment-btn').onclick = function() {
+      const input = document.getElementById('comment-input');
+      const text = input.value.trim();
+      if (!text) return;
+      // Create comment card
+      const card = document.createElement('div');
+      card.className = 'comment-card';
+      card.innerHTML = `
+        <div class="comment-author">You</div>
+        <div class="comment-text">${text}</div>
+        <div class="comment-date">${new Date().toLocaleDateString()}</div>
+      `;
+      // Insert before the add-comment box
+      const addComment = document.querySelector('.add-comment');
+      addComment.parentNode.insertBefore(card, addComment);
+      input.value = '';
+    };
+    // Optional: allow Enter key to submit
+    document.getElementById('comment-input').addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') document.getElementById('comment-btn').click();
+    });
+    </script>
+
+    <!-- Report Cards (for navigation to details) -->
+    <a href="reportDetail.html" style="text-decoration:none; color:inherit;">
+      <div class="report-card">
+        <div class="report-info">
+          <div class="report-title">Water Leakage</div>
+          <div class="report-desc">Sector 12, near Community Hall</div>
+          <div class="report-date">Reported: Sep 8, 2025</div>
+        </div>
+        <div class="status pending">Pending</div>
+      </div>
+    </a>
+
+    <a href="reportDetail.html" style="text-decoration:none; color:inherit;">
+      <div class="report-card">
+        <div class="report-info">
+          <div class="report-title">Overflowing Dustbin</div>
+          <div class="report-desc">Park Road, Block B</div>
+          <div class="report-date">Reported: Sep 7, 2025</div>
+        </div>
+        <div class="status progress">In Progress</div>
+      </div>
+    </a>
+
+    <a href="reportDetail.html" style="text-decoration:none; color:inherit;">
+      <div class="report-card">
+        <div class="report-info">
+          <div class="report-title">Damaged Footpath</div>
+          <div class="report-desc">Near City Mall, Sector 5</div>
+          <div class="report-date">Reported: Sep 5, 2025</div>
+        </div>
+        <div class="status resolved">Resolved</div>
+      </div>
+    </a>
+
+    <a href="reportDetail.html" style="text-decoration:none; color:inherit;">
+      <div class="report-card">
+        <div class="report-info">
+          <div class="report-title">Street Dog Menace</div>
+          <div class="report-desc">Green Avenue, Lane 2</div>
+          <div class="report-date">Reported: Sep 4, 2025</div>
+        </div>
+        <div class="status pending">Pending</div>
+      </div>
+    </a>
+
+  </div>
+
+  <!-- Bottom Nav -->
+  <div class="bottom-nav">
+    <a href="home.html"><i class="fa-solid fa-house"></i>Home</a>
+    <a href="reportIssue.html"><i class="fa-solid fa-camera"></i>Report</a>
+    <a href="profile.html"><i class="fa-solid fa-user"></i>Profile</a>
+  </div>
+</div>
+
+</body>
+</html>

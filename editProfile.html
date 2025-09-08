@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Profile - NivaaraN</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+        *{
+        text-decoration: none;
+        color: inherit;
+        
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #e0e0e0;
+    }
+
+    .phone {
+      width: 360px;
+      height: 640px;
+      border: 14px solid #333;
+      border-radius: 36px;
+      background: #fff;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      padding: 15px;
+    }
+
+    .phone::before {
+      content: '';
+      display: block;
+      width: 140px;
+      height: 25px;
+      background: #333;
+      border-radius: 0 0 20px 20px;
+      position: absolute;
+      top: -1px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .screen {
+      flex: 1;
+      overflow-y: auto;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+    .header .title {
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: #1976D2;
+    }
+    .header i {
+      font-size: 1.2rem;
+      color: #1976D2;
+      cursor: pointer;
+    }
+
+    .form-group {
+      background: #fff;
+      padding: 10px;
+      border-radius: 12px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    }
+    .form-group i {
+      color: #1976D2;
+      margin-right: 10px;
+      font-size: 1rem;
+      width: 20px;
+      text-align: center;
+    }
+    .form-group input {
+      border: none;
+      outline: none;
+      flex: 1;
+      font-size: 0.9rem;
+      font-family: inherit;
+      background: transparent;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 25px;
+      background: #1976D2;
+      color: white;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .submit-btn:hover {
+      opacity: 0.9;
+      transform: scale(1.03);
+    }
+
+    .bottom-nav {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 10px;
+      background: #fff;
+      border-top: 1px solid #ddd;
+    }
+    .bottom-nav div {
+      text-align: center;
+      font-size: 0.75rem;
+      color: #1976D2;
+      cursor: pointer;
+    }
+    .bottom-nav i {
+      font-size: 1.2rem;
+      display: block;
+      margin-bottom: 4px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="phone">
+  <div class="screen">
+
+    <!-- Header -->
+    <div class="header">
+      <a href="profile.html"><i class="fa-solid fa-arrow-left"></i></a>
+      <div class="title">Edit Profile</div>
+      <a href="profile.html"><i class="fa-solid fa-check" title="Save Changes"></i></a>
+    </div>
+
+    <!-- Form Fields -->
+    <div class="form-group">
+      <i class="fa-solid fa-user"></i>
+      <input type="text" placeholder="Full Name" value="Anagh Jaiswar">
+    </div>
+
+    <div class="form-group">
+      <i class="fa-solid fa-envelope"></i>
+      <input type="email" placeholder="Email" value="anagh@example.com">
+    </div>
+
+    <div class="form-group">
+      <i class="fa-solid fa-phone"></i>
+      <input type="text" placeholder="Phone Number" value="+91 9876543210">
+    </div>
+
+    <div class="form-group">
+      <i class="fa-solid fa-location-dot"></i>
+      <input type="text" placeholder="Address" value="Ghaziabad, UP">
+    </div>
+
+    <!-- Submit Button -->
+    <button class="submit-btn"><a href="profile.html">Save Changes</a></button>
+
+  </div>
+
+  <!-- Bottom Nav -->
+  <div class="bottom-nav">
+    <div><i class="fa-solid fa-house"></i><a href="home.html">Home</a></div>
+    <div><i class="fa-solid fa-camera"></i><a href="myReports.html">Report</a></div>
+    <div><i class="fa-solid fa-user"></i><a href="profile.html">Profile</a></div>
+  </div>
+</div>
+
+</body>
+</html>

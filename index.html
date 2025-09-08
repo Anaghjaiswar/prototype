@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NivaaraN App - Login</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+        *{
+        text-decoration: none;
+        color: inherit;
+        
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #e0e0e0;
+    }
+
+    /* Phone frame */
+    .phone {
+      width: 360px;
+      height: 640px;
+      border: 14px solid #333;
+      border-radius: 36px;
+      background: #fff;
+      position: relative;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Top notch */
+    .phone::before {
+      content: '';
+      display: block;
+      width: 140px;
+      height: 25px;
+      background: #333;
+      border-radius: 0 0 20px 20px;
+      position: absolute;
+      top: -1px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    /* Screen content */
+    .screen {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      background: linear-gradient(135deg, #1976D2, #42A5F5);
+      color: white;
+      text-align: center;
+    }
+
+    .logo {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .tagline {
+      font-size: 0.9rem;
+      margin-bottom: 40px;
+      color: #e0e0e0;
+    }
+
+    .btn {
+      width: 80%;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 25px;
+      border: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .btn i {
+      font-size: 1.2rem;
+    }
+
+    .btn-google {
+      background: #DB4437;
+      color: white;
+    }
+
+    .btn-phone {
+      background: #43A047;
+      color: white;
+    }
+
+    .btn:hover {
+      opacity: 0.9;
+      transform: scale(1.03);
+    }
+
+    .footer-text {
+      margin-top: 30px;
+      font-size: 0.75rem;
+      color: #ddd;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="phone">
+    <div class="screen">
+      <div class="logo">📱 NivaaraN</div>
+      <div class="tagline">Report • Resolve • Rebuild</div>
+
+      <a href="home.html" class="btn btn-google">
+        <i class="fa-brands fa-google"></i> Login with Google
+      </a>
+      <a href="home.html" class="btn btn-phone">
+        <i class="fa-solid fa-phone"></i> Login with Phone
+      </a>
+
+      <div class="footer-text">
+        By logging in, you agree to our<br>Terms & Privacy Policy
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NivaaraN App - Profile</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+        *{
+        text-decoration: none;
+        color: inherit;
+        
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #e0e0e0;
+    }
+
+    /* Phone frame */
+    .phone {
+      width: 360px;
+      height: 640px;
+      border: 14px solid #333;
+      border-radius: 36px;
+      background: #fff;
+      position: relative;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .phone::before {
+      content: '';
+      display: block;
+      width: 140px;
+      height: 25px;
+      background: #333;
+      border-radius: 0 0 20px 20px;
+      position: absolute;
+      top: -1px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    /* Scrollable content */
+    .screen {
+      flex: 1;
+      overflow-y: auto;
+      padding: 15px;
+      background: #f9f9f9;
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+    .header .title {
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: #1976D2;
+    }
+    .header i {
+      font-size: 1.2rem;
+      color: #1976D2;
+      cursor: pointer;
+    }
+
+    /* Profile Card */
+    .profile-card {
+      position: relative;
+      background: #fff;
+      border-radius: 16px;
+      padding: 20px 15px;
+      margin-bottom: 15px;
+      text-align: center;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+    .profile-card img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+    .profile-card .name {
+      font-weight: 600;
+      font-size: 1rem;
+      color: #333;
+      margin-bottom: 4px;
+    }
+    .profile-card .role {
+      font-size: 0.8rem;
+      color: #555;
+    }
+    .edit-icon {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: #1976D2;
+      color: #fff;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+
+    /* Stats */
+    .stats {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+    .stat-card {
+      flex: 1;
+      background: #fff;
+      border-radius: 12px;
+      padding: 10px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    }
+    .stat-card strong {
+      display: block;
+      font-size: 0.9rem;
+      color: #1976D2;
+    }
+    .stat-card span {
+      font-size: 0.75rem;
+      color: #555;
+    }
+
+    /* Recent Activity */
+    .recent-title {
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #333;
+    }
+    .activity-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 10px;
+      margin-bottom: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      font-size: 0.85rem;
+    }
+    .activity-status {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #2e7d32;
+    }
+
+    /* Menu / Settings */
+    .menu {
+      margin: 15px 0;
+    }
+    .menu-item {
+      background: #fff;
+      border-radius: 12px;
+      padding: 12px 15px;
+      margin-bottom: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      font-size: 0.85rem;
+    }
+    .menu-item i {
+      font-size: 1.1rem;
+      color: #1976D2;
+      width: 20px;
+      text-align: center;
+    }
+
+    /* Logout Button */
+    .logout-btn {
+      background: #c62828;
+      color: #fff;
+      text-align: center;
+      padding: 12px;
+      border-radius: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-bottom: 15px;
+    }
+
+    /* Bottom Nav */
+    .bottom-nav {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 10px;
+      background: #fff;
+      border-top: 1px solid #ddd;
+    }
+    .bottom-nav div {
+      text-align: center;
+      font-size: 0.75rem;
+      color: #1976D2;
+      cursor: pointer;
+    }
+    .bottom-nav i {
+      font-size: 1.2rem;
+      display: block;
+      margin-bottom: 4px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="phone">
+  <div class="screen">
+
+    <!-- Header -->
+    <div class="header">
+      <i class="fa-solid fa-arrow-left"></i>
+      <div class="title">Profile</div>
+      <a href="notifications.html" title="Notifications"><i class="fa-solid fa-bell"></i></a>
+    </div>
+
+    <!-- Profile Card -->
+    <div class="profile-card">
+      <img src="assets/anagh photo.jpg" alt="Profile Picture">
+      <div class="name">Anagh Jaiswar</div>
+      <div class="role">Citizen</div>
+      <div class="edit-icon"><i class="fa-solid fa-pen"></i></div>
+    </div>
+
+    <!-- Stats -->
+    <div class="stats">
+      <div class="stat-card"><strong>12</strong><span>Reports</span></div>
+      <div class="stat-card"><strong>8</strong><span>Resolved</span></div>
+      <div class="stat-card"><strong>25</strong><span>Comments</span></div>
+    </div>
+
+    <!-- Recent Activity -->
+    <div class="recent-title">Recent Activity</div>
+    <div class="activity-card">Reported: Broken Streetlight - <span class="activity-status">In Progress</span></div>
+    <div class="activity-card">Reported: Garbage Dump - <span class="activity-status">Resolved ✅</span></div>
+    <div class="activity-card">Reported: Road Pothole - <span class="activity-status">Resolved ✅</span></div>
+
+    <!-- Menu / Settings -->
+    <div class="menu">
+      <div class="menu-item"><i class="fa-solid fa-user-pen"></i><a href="editProfile.html">Edit Profile</a></div>
+      <div class="menu-item"><i class="fa-solid fa-lock"></i><a href="changePassword.html">Change Password</a></div>
+      <div class="menu-item"><i class="fa-solid fa-bell"></i><a href="notificationSettings.html">Notifications Settings</a></div>
+      <div class="menu-item"><i class="fa-solid fa-circle-info"></i><a href="help.html">Help / About</a></div>
+    </div>
+
+    <!-- Logout -->
+    <div class="logout-btn"><a href="index.html">Logout</a></div>
+
+  </div>
+
+  <!-- Bottom Nav -->
+  <div class="bottom-nav">
+    <div><i class="fa-solid fa-house"></i><a href="home.html">home</a></div>
+    <div><i class="fa-solid fa-camera"></i><a href="myReports.html">Report</a></div>
+    <div><i class="fa-solid fa-user"></i><a href="profile.html">Profile</a></div>
+  </div>
+</div>
+
+</body>
+</html>

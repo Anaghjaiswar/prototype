@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NivaaraN App - Nearby Issues</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+        *{
+        text-decoration: none;
+        color: inherit;
+        
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #e0e0e0;
+    }
+
+    .phone {
+      width: 360px;
+      height: 640px;
+      border: 14px solid #333;
+      border-radius: 36px;
+      background: #fff;
+      position: relative;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .phone::before {
+      content: '';
+      display: block;
+      width: 140px;
+      height: 25px;
+      background: #333;
+      border-radius: 0 0 20px 20px;
+      position: absolute;
+      top: -1px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .screen {
+      flex: 1;
+      overflow-y: auto;
+      padding: 15px;
+      background: #f9f9f9;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .header .title {
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: #1976D2;
+    }
+    .header i {
+      font-size: 1.2rem;
+      color: #1976D2;
+      cursor: pointer;
+    }
+    .header a {
+      color: #1976D2;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+    }
+
+    /* Map Placeholder */
+    .map {
+      width: 100%;
+      height: 200px;
+      background: #cfd8dc;
+      border-radius: 12px;
+      margin-bottom: 15px;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #555;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    /* Issue Cards */
+    .issue-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 10px;
+      margin-bottom: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: 0.2s;
+      text-decoration: none;
+      color: inherit;
+    }
+    .issue-card:hover {
+      background: #e3f2fd;
+    }
+    .issue-info {
+      flex: 1;
+    }
+    .issue-title {
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 4px;
+    }
+    .issue-location {
+      font-size: 0.75rem;
+      color: #555;
+      margin-bottom: 2px;
+    }
+    .issue-status {
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 2px 6px;
+      border-radius: 10px;
+      text-align: center;
+    }
+    .status.pending { background: #ffebee; color: #c62828; }
+    .status.progress { background: #fff8e1; color: #ef6c00; }
+    .status.resolved { background: #e8f5e9; color: #2e7d32; }
+
+    /* Floating Camera Button */
+    .camera-btn {
+      position: absolute;
+      bottom: 70px;
+      right: 20px;
+      background: #1976D2;
+      color: #fff;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.4rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    /* Bottom Nav */
+    .bottom-nav {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 10px;
+      background: #fff;
+      border-top: 1px solid #ddd;
+    }
+    .bottom-nav a {
+      text-align: center;
+      font-size: 0.75rem;
+      color: #1976D2;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .bottom-nav i {
+      font-size: 1.2rem;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+  </style>
+</head>
+<body>
+
+<div class="phone">
+  <div class="screen">
+
+    <!-- Header -->
+    <div class="header">
+      <a href="home.html" title="Back to Home"><i class="fa-solid fa-arrow-left"></i></a>
+      <div class="title">Nearby Issues</div>
+      <a href="notifications.html" title="Notifications"><i class="fa-solid fa-bell"></i></a>
+    </div>
+
+    <!-- Map -->
+    <div class="map">
+      <img src="assets/map.webp" alt="" height="200px" width="100%">
+    </div>
+
+    <!-- Issue Cards -->
+    <a href="reportDetail.html" class="issue-card">
+      <div class="issue-info">
+        <div class="issue-title">Broken Streetlight</div>
+        <div class="issue-location">Central Park, Sector 9</div>
+      </div>
+      <div class="issue-status status progress">In Progress</div>
+    </a>
+
+    <a href="reportDetail.html" class="issue-card">
+      <div class="issue-info">
+        <div class="issue-title">Garbage Dump</div>
+        <div class="issue-location">Indirapuram, Lane 3</div>
+      </div>
+      <div class="issue-status status resolved">Resolved ✅</div>
+    </a>
+
+    <a href="reportDetail.html" class="issue-card">
+      <div class="issue-info">
+        <div class="issue-title">Road Pothole</div>
+        <div class="issue-location">NH-24, near Metro Station</div>
+      </div>
+      <div class="issue-status status pending">Pending</div>
+    </a>
+
+  </div>
+
+  <!-- Floating Camera Button -->
+  <a href="reportIssue.html" class="camera-btn" title="Report an Issue"><i class="fa-solid fa-camera"></i></a>
+
+  <!-- Bottom Nav -->
+  <div class="bottom-nav">
+    <a href="home.html"><i class="fa-solid fa-house"></i>Home</a>
+    <a href="reportIssue.html"><i class="fa-solid fa-camera"></i>Report</a>
+    <a href="profile.html"><i class="fa-solid fa-user"></i>Profile</a>
+  </div>
+</div>
+
+</body>
+</html>
