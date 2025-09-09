@@ -248,25 +248,7 @@
 </div>
 
 <script>
-  const description = document.getElementById("description");
-  const severityInput = document.getElementById("severity");
-  const severityGroup = severityInput.parentElement;
-  const fileUpload = document.getElementById("file-upload");
-  const uploadBox = document.getElementById("upload-box");
-  const categoryInput = document.getElementById("category");
-  const locationInput = document.querySelector("input[placeholder='Auto-detected Location']");
-
-  // Severity toggle on typing description
-  description.addEventListener("input", function(){
-    if(this.value.trim().length > 0){
-      severityGroup.style.display = "flex";
-    } else {
-      severityGroup.style.display = "none";
-    }
-  });
-
-  // File upload logic
-  fileUpload.addEventListener("change", function(event){
+  document.getElementById("file-upload").addEventListener("change", function(event){
     let file = event.target.files[0];
     if(!file) return;
 
@@ -289,19 +271,20 @@
     }
 
     // Auto update fields
-    if(categoryInput) categoryInput.value = category;
-    severityInput.value = severity;
-    if(locationInput) locationInput.value = "AKGEC, Ghaziabad";
+    document.getElementById("category").value = category;
+    document.getElementById("severity").value = severity;
+    document.querySelector("input[placeholder='Auto-detected Location']").value = "AKGEC, Ghaziabad";
 
-    // Show uploaded image in box
-    const reader = new FileReader();
+
+    let reader = new FileReader();
     reader.onload = function(e){
-      uploadBox.innerHTML = `<img src="${e.target.result}" style="max-width:100%; border-radius:10px;">`;
+      let box = document.getElementById("upload-box");
+      box.innerHTML = `<img src="${e.target.result}" style="max-width:100%; border-radius:10px;">`;
     }
     reader.readAsDataURL(file);
   });
-</script>
 
+</script>
 
 </body>
 </html>
