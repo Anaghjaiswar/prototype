@@ -7,130 +7,126 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
-        *{
-        text-decoration: none;
-        color: inherit;
-        
-    }
-    body {
-      font-family: 'Poppins', sans-serif;
-      margin: 0;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: #e0e0e0;
-    }
+* {
+  text-decoration: none;
+  color: inherit;
+}
 
-    .phone {
-      width: 360px;
-      height: 640px;
-      border: 14px solid #333;
-      border-radius: 36px;
-      background: #fff;
-      box-shadow: 0 0 20px rgba(0,0,0,0.3);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      padding: 15px;
-    }
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #EDE7F6; /* Soft lavender background */
+}
 
-    /* .phone::before {
-      content: '';
-      display: block;
-      width: 140px;
-      height: 25px;
-      background: #333;
-      border-radius: 0 0 20px 20px;
-      position: absolute;
-      top: -1px;
-      left: 50%;
-      transform: translateX(-50%);
-    } */
+.phone {
+  width: 360px;
+  height: 640px;
+  border: 14px solid #1A237E; /* Deep blue border */
+  border-radius: 36px;
+  background: #fff;
+  box-shadow: 0 0 20px rgba(0,0,0,0.25);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+}
 
-    .screen {
-      flex: 1;
-      overflow-y: auto;
-    }
+.screen {
+  flex: 1;
+  overflow-y: auto;
+}
 
-    .header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 15px;
-    }
-    .header .title {
-      font-weight: 600;
-      font-size: 1.1rem;
-      color: #1976D2;
-    }
-    .header i {
-      font-size: 1.2rem;
-      color: #1976D2;
-      cursor: pointer;
-    }
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
 
-    .form-group {
-      background: #fff;
-      padding: 10px;
-      border-radius: 12px;
-      margin-bottom: 12px;
-      display: flex;
-      align-items: center;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-    }
-    .form-group i {
-      color: #1976D2;
-      margin-right: 10px;
-      font-size: 1rem;
-      width: 20px;
-      text-align: center;
-    }
-    .form-group input {
-      border: none;
-      outline: none;
-      flex: 1;
-      font-size: 0.9rem;
-      font-family: inherit;
-      background: transparent;
-    }
+.header .title {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #1A237E; /* Title deep blue */
+}
 
-    .submit-btn {
-      width: 100%;
-      padding: 12px;
-      border: none;
-      border-radius: 25px;
-      background: #1976D2;
-      color: white;
-      font-size: 1rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-    .submit-btn:hover {
-      opacity: 0.9;
-      transform: scale(1.03);
-    }
+.header i {
+  font-size: 1.2rem;
+  color: #1A237E; /* Icon deep blue */
+  cursor: pointer;
+}
 
-    .bottom-nav {
+.form-group {
+  background: #ffffff;
+  padding: 10px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.form-group i {
+  color: #1A237E; /* Icon deep blue */
+  margin-right: 10px;
+  font-size: 1rem;
+  width: 20px;
+  text-align: center;
+}
+
+.form-group input {
+  border: none;
+  outline: none;
+  flex: 1;
+  font-size: 0.9rem;
+  font-family: inherit;
+  background: transparent;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 25px;
+  background: #1A237E; /* Deep blue button */
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.submit-btn:hover {
+  opacity: 0.9;
+  transform: scale(1.03);
+}
+
+.bottom-nav {
       display: flex;
       justify-content: space-around;
       align-items: center;
       padding: 10px;
-      background: #fff;
+      background: #a3b7ca;
       border-top: 1px solid #ddd;
     }
-    .bottom-nav div {
+    .bottom-nav a {
       text-align: center;
       font-size: 0.75rem;
-      color: #1976D2;
-      cursor: pointer;
+      color:#003f5c;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
     .bottom-nav i {
       font-size: 1.2rem;
       display: block;
       margin-bottom: 4px;
     }
+
   </style>
 </head>
 <body>
