@@ -129,6 +129,25 @@ body::-webkit-scrollbar,
   font-family: inherit;
   background: transparent;
 }
+.description-group {
+  position: relative;
+}
+
+.voice-icon {
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+  font-size: 1.1rem;
+  color: #c7522a;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.voice-icon:hover {
+  color: #003f5c;
+  transform: scale(1.1);
+}
+
 textarea {
   resize: none;
 }
@@ -201,13 +220,15 @@ textarea {
     <!-- Form Fields -->
     <div class="form-group">
       <i class="fa-solid fa-pen"></i>
-      <input type="text" placeholder="Title (e.g., Broken Streetlight)">
+      <input type="text" placeholder="Title (e.g., Broken Streetlight)"id ="title">
     </div>
 
-    <div class="form-group">
-      <i class="fa-solid fa-align-left"></i>
-      <textarea rows="3" placeholder="Add more details..."></textarea>
-    </div>
+    <div class="form-group description-group">
+  <i class="fa-solid fa-align-left"></i>
+  <textarea rows="3" placeholder="Add more details..."></textarea>
+  <i class="fa-solid fa-microphone voice-icon" title="Speak your issue"></i>
+</div>
+
 
     <div class="form-group">
       <i class="fa-solid fa-list"></i>
@@ -272,9 +293,11 @@ textarea {
     }
 
     // Auto update fields
+    document.getElementById("title").value = category;
     document.getElementById("category").value = category;
     document.getElementById("severity").value = severity;
     document.querySelector("input[placeholder='Auto-detected Location']").value = "AKGEC, Ghaziabad";
+
 
 
     let reader = new FileReader();
